@@ -13,6 +13,6 @@ A mod to fast-forward dialogue in Digimon Story: Cyber Sleuth. This mod currentl
 1. Download the latest release.
 2. Register the mod in [SimpleDSCSModManager](https://github.com/Pherakki/SimpleDSCSModManager) by dragging-and-dropping the mod zip archive onto the left-hand pane ("mod activation window") of SimpleDSCSModManager.
 3. Click "Finish" in the pop-up registry wizard. Wait for the mod manager to finish registering the mod.
-4. Click "Install Mods"
+4. Tick the checkbox next to the mod to activate it. Click "Install Mods"
 5. Wait several minutes for the mod manager to patch everything together and cache the results for faster installs next time you edit the files.
 6. Click "Launch Game", or launch the game normally.
