@@ -1,0 +1,140 @@
+globalSkipTextMode <- false;
+globalSkipAnimSpeed <- 0.1;
+globalSkipTextSpeed <- 1.0;
+globalSkipTextSpeed2 <- 1.5;
+
+function SkipListenerWaitMessage()
+{
+	this.WaitFrame(this.Util.SecondFromFrame(0.05));
+	while (1)
+	{
+		if (this.Work.IsPushKey("CANCEL"))
+		{
+			globalSkipTextMode = !globalSkipTextMode;
+			break;
+		}
+		else if (this.Work.IsPushKey("DECIDE") || this.Talk.IsNext())
+		{
+			break;
+		}
+		this.WaitFrame(this.Util.SecondFromFrame(0.05));
+		
+	}
+	
+}
+
+// Message will bug out for some reason if "this.Work.IsPushKey("DECIDE")" is in the else-if statement
+function SkipListenerWaitMessage2()
+{
+	this.WaitFrame(this.Util.SecondFromFrame(0.05));
+	while (1)
+	{
+		if (this.Work.IsPushKey("CANCEL"))
+		{
+			globalSkipTextMode = !globalSkipTextMode;
+			break;
+		}
+		else if (this.Talk.IsNext())
+		{
+			break;
+		}
+		this.WaitFrame(this.Util.SecondFromFrame(0.05));
+	}
+}
+
+
+function SkipListenerMessageTalk_wait( a_message_id, a_wait )
+{
+	this.Talk.MessageTalk_Auto(a_message_id);
+	this.SkipListenerSetWaitMessage(a_wait);
+}
+
+function SkipListenerMessage_wait( a_message_id, a_wait )
+{
+	this.Talk.Message_Auto(a_message_id);
+	this.SkipListenerSetWaitMessage(a_wait);
+}
+
+
+function SkipListenerSetWaitMessage( Wait )
+{
+	this.Talk.SetWait(Wait);
+	local timeElapsed = 0;
+	local checkInterval = 0.05;
+	this.WaitFrame(this.Util.SecondFromFrame(checkInterval));
+	while (1)
+	{
+		if (this.Work.IsPushKey("CANCEL"))
+		{
+			globalSkipTextMode = !globalSkipTextMode;
+			break;
+		}
+        else if (timeElapsed >= Wait)
+        {
+            break;
+        }
+		else if (this.Work.IsPushKey("DECIDE") || this.Talk.IsNext())
+		{
+			break;
+		}
+        
+        timeElapsed += checkInterval;
+		this.WaitFrame(this.Util.SecondFromFrame(checkInterval));
+
+	}
+}
+ 
+
+
+function MessageTalk( a_message_id )
+{
+	if (globalSkipTextMode)
+	{
+		this.SkipListenerMessageTalk_wait(a_message_id, globalSkipTextSpeed );
+	}
+	else
+	{
+		this.Talk.MessageTalk(a_message_id);
+		this.SkipListenerWaitMessage();
+	}
+}
+
+function Message( a_message_id )
+{
+    if (globalSkipTextMode)
+    {
+        this.SkipListenerMessage_wait(a_message_id, globalSkipTextSpeed2);
+    }
+    else
+    {
+        this.Talk.Message(a_message_id);
+        this.SkipListenerWaitMessage2();
+    }
+}
+
+function TalkExit()
+{
+	this.WaitFrame(this.Util.SecondFromFrame(1));
+	this.Talk.Exit();
+
+	while (!this.Talk.IsExit())
+	{
+		this.WaitFrame(this.Util.SecondFromFrame(1));
+	}
+	globalSkipTextMode = false;
+	this.Talk.End();
+}
+
+function TalkExit2()
+{
+	this.WaitFrame(this.Util.SecondFromFrame(1));
+	this.Talk.Exit();
+
+	while (!this.Talk.IsExit())
+	{
+		this.Field.CloseUI(false);
+		this.WaitFrame(this.Util.SecondFromFrame(1));
+	}
+	globalSkipTextMode = false;
+	this.Talk.End();
+}
