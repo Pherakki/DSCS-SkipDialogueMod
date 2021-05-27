@@ -1,0 +1,21 @@
+[
+    {
+        "replace_call": "this.Talk.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Talk.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call": "this.Vista.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Vista.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call_in_funcs": "this.WaitFrame({#0})",
+        "with": "this.SkipListenerWaitFrame({#0})",
+        "funcs": [
+            "s523_d14_0501",
+            "s523_d14_0901",
+            "s523_t01_1001",
+            "s549_d14_0601",
+            "s549_d14_0701"
+        ]
+    }
+]

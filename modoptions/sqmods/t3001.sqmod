@@ -1,0 +1,37 @@
+[
+    {
+        "replace_call": "this.Talk.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Talk.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call": "this.Vista.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Vista.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call_in_funcs": "this.WaitFrame({#0})",
+        "with": "this.SkipListenerWaitFrame({#0})",
+        "funcs": [
+            "SET_t3001_STATUS",
+            "evt_0000",
+            "m01_t30_0401",
+            "m01_t30_0501",
+            "m05_t30_0603",
+            "m15_t05_1501",
+            "m15_t30_1701",
+            "m15_t30_1702",
+            "m15_t30_2301",
+            "quest_hucker_01",
+            "quest_hucker_02",
+            "quest_hucker_03",
+            "quest_hucker_04",
+            "quest_hucker_05",
+            "s113_t05_0101",
+            "s113_t05_0201",
+            "s113_t05_0301",
+            "s113_t05_0501",
+            "s113_t05_0701",
+            "s113_t05_1001",
+            "s118_t05_0301"
+        ]
+    }
+]

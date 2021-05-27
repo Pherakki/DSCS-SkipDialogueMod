@@ -1,7 +1,25 @@
 globalSkipTextMode <- false;
-globalSkipAnimSpeed <- 0.1;
+globalSkipAnimMultiplier <- 10;
 globalSkipTextSpeed <- 1.0;
 globalSkipTextSpeed2 <- 1.5;
+
+function SkipListenerWaitFrame( Wait )
+{
+	local timeElapsed = 0;
+	local checkInterval = 0.05;
+    
+	while (timeElapsed < Wait)
+	{
+		if (this.Work.IsPushKey("CANCEL"))
+		{
+			globalSkipTextMode = !globalSkipTextMode;
+            Wait = globalSkipTextMode ? Wait/globalSkipAnimMultiplier : Wait*globalSkipAnimMultiplier;
+		}
+        timeElapsed += checkInterval;
+		this.WaitFrame(this.Util.SecondFromFrame(checkInterval));
+
+	}
+}
 
 function SkipListenerWaitMessage()
 {

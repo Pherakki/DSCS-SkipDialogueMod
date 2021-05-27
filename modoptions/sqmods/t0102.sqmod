@@ -1,0 +1,32 @@
+[
+    {
+        "replace_call": "this.Talk.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Talk.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call": "this.Vista.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Vista.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call_in_funcs": "this.WaitFrame({#0})",
+        "with": "this.SkipListenerWaitFrame({#0})",
+        "funcs": [
+            "GASHA_PLAY",
+            "MEDAL_MANIA",
+            "m04_t01_0001",
+            "m04_t01_0101",
+            "m04_t01_0201",
+            "m04_t01_1101",
+            "m08_t01_0901",
+            "m08_t01_1101",
+            "m08_t02_1001",
+            "s003_t01_0101",
+            "s003_t01_0401",
+            "s104_t01_0501",
+            "s108_t01_0301",
+            "s203_t01_0101",
+            "s203_t01_0401",
+            "s203_t01_0501"
+        ]
+    }
+]

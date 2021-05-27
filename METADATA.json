@@ -1,7 +1,7 @@
 {
-  "Name": "Skip Dialogue Mod",
+  "Name": "Skip Dialogue & Cutscene Mod",
   "Author": "Pherakki",
-  "Version": "0.1",
+  "Version": "0.2",
   "Category": "Script",
-  "Description": "Toggles the fast-forwarding of conversations by pressing the 'Cancel' button."
+  "Description": "Toggles the fast-forwarding of conversations and cutscenes by pressing the 'Cancel' button."
 }

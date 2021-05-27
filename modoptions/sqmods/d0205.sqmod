@@ -1,0 +1,29 @@
+[
+    {
+        "replace_call": "this.Talk.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Talk.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call": "this.Vista.PlayAnimation({#0}, {#1}, {#2}, {#3})",
+        "with": "this.Vista.PlayAnimation({#0}, {#1}, globalSkipTextMode ? ({#2}/globalSkipAnimMultiplier) : ({#2}), {#3})"
+    },
+    {
+        "replace_call_in_funcs": "this.WaitFrame({#0})",
+        "with": "this.SkipListenerWaitFrame({#0})",
+        "funcs": [
+            "SET_d0205_STATUS",
+            "d0205_npc_0050",
+            "m00_d02_0601",
+            "m00_d02_0602",
+            "m00_d02_0702",
+            "m00_d02_0703",
+            "m00_d02_0710",
+            "m00_d02_0711",
+            "m00_d02_0901",
+            "m00_d02_1001",
+            "m01_d02_0701",
+            "m01_d02_0801",
+            "s117_e00_0101"
+        ]
+    }
+]
