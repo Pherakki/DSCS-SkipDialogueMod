@@ -9,7 +9,7 @@
     },
     {
         "replace_call_in_funcs": "this.WaitFrame({#0})",
-        "with": "this.SkipListenerWaitFrame({#0})",
+        "with": "this.SuperSkipListenerWaitFrame({#0})",
         "funcs": [
             "m00_e00_0004"
         ]
