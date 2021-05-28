@@ -3,6 +3,20 @@ globalSkipAnimMultiplier <- 10;
 globalSkipTextSpeed <- 1.0;
 globalSkipTextSpeed2 <- 1.5;
 
+function VistaExit()
+{
+    this.WaitFrame(this.Util.SecondFromFrame(1));
+    this.Vista.Exit();
+
+    while (!this.Vista.IsExit())
+    {
+        this.WaitFrame(this.Util.SecondFromFrame(1));
+    }
+
+    globalSkipTextMode = false;
+    this.Vista.End();
+}
+
 function SkipListenerWaitFrame( Wait )
 {
 	local timeElapsed = 0;
