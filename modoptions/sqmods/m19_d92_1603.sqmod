@@ -11,7 +11,7 @@
         "replace_call_in_funcs": "this.WaitFrame({#0})",
         "with": "this.SkipListenerWaitFrame({#0})",
         "funcs": [
-            "m19_d91_1602"
+            "m19_d92_1603"
         ]
     }
 ]

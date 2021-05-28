@@ -11,7 +11,8 @@
         "replace_call_in_funcs": "this.WaitFrame({#0})",
         "with": "this.SkipListenerWaitFrame({#0})",
         "funcs": [
-            "battle_1020"
+            "battle_1020",
+            "battle_1020_2"
         ]
     }
 ]

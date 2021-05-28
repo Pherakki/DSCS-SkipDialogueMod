@@ -12,6 +12,7 @@
         "with": "this.SkipListenerWaitFrame({#0})",
         "funcs": [
             "evt_0000",
+            "evt_0001",
             "evt_0003",
             "s103_d11_0810",
             "s103_e00_0801"

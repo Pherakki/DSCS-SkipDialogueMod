@@ -11,7 +11,6 @@
         "replace_call_in_funcs": "this.WaitFrame({#0})",
         "with": "this.SkipListenerWaitFrame({#0})",
         "funcs": [
-            "evt_0007",
             "m55_d18_1501",
             "m55_d18_1601",
             "m55_t50_1701"

@@ -13,6 +13,7 @@
         "funcs": [
             "GASHA_PLAY",
             "MEDAL_MANIA",
+            "evt_0002",
             "m04_t01_0001",
             "m04_t01_0101",
             "m04_t01_0201",

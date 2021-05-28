@@ -11,7 +11,6 @@
         "replace_call_in_funcs": "this.WaitFrame({#0})",
         "with": "this.SkipListenerWaitFrame({#0})",
         "funcs": [
-            "Event_m61_d14_0801_02",
             "m15_t12_1801"
         ]
     }
