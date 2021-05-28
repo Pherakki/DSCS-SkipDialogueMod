@@ -3,10 +3,10 @@ A mod to fast-forward dialogue in Digimon Story: Cyber Sleuth. This mod currentl
 
 ## Features
 - Toggle accelerated dialogue by pressing the appropriate "Cancel" button for your input device (_e.g._ `Circle` for Dualshock controllers, `B` for XBOX, etc.) 
+- Animation acceleration in cutscene-style dialogues
+- Cutscene acceleration
 
 ## Planned Features
-- Animation acceleration in cutscene-style dialogues [requires expansion of mod manager features]
-- Cutscene acceleration [requires expansion of mod manager features]
 - Movie Skipping [May not be possible]
 
 ## Installation
