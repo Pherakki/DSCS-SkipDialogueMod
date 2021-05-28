@@ -21,6 +21,26 @@ function SkipListenerWaitFrame( Wait )
 	}
 }
 
+function SuperSkipListenerWaitFrame( Wait )
+{
+    local timeElapsed = 0;
+    local checkInterval = 0.05;
+    if (globalSkipTextMode)
+    {
+        Wait = 0.05;
+    }
+    while (timeElapsed < Wait)
+    {
+        if (this.Work.IsPushKey("CANCEL"))
+        {
+            globalSkipTextMode = !globalSkipTextMode;
+            Wait = 0.05;
+        }
+        timeElapsed += checkInterval;
+        this.WaitFrame(this.Util.SecondFromFrame(checkInterval));
+    }
+}
+
 function SkipListenerWaitMessage()
 {
 	this.WaitFrame(this.Util.SecondFromFrame(0.05));
