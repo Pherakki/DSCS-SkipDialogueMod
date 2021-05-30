@@ -1,5 +1,5 @@
 # DSCS-SkipDialogueMod
-A mod to fast-forward dialogue in Digimon Story: Cyber Sleuth. This mod currently affects dialogue and cutscenes cutscenes. Movies, however, are not currently affected.
+A mod to fast-forward dialogue in Digimon Story: Cyber Sleuth. This mod currently affects dialogue and cutscenes. Movies, however, are not currently affected.
 
 ## Features
 - Toggle accelerated dialogue by pressing the appropriate "Cancel" button for your input device (_e.g._ `Circle` for Dualshock controllers, `B` for XBOX, etc.) 
